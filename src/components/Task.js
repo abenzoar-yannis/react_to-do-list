@@ -5,6 +5,7 @@
 import React, { useContext } from "react";
 import DataContext from "../context/DataContext"; // Import the DataContext
 
+import TaskDate from "./TaskDate";
 import ExpandButton from "./ExpandButton";
 
 /* Render a single task */
@@ -31,24 +32,17 @@ const Task = ({ task, index }) => {
       </div>
 
       <div className="task-info">
-        <div>
-          <p>
-            Commence{" "}
-            {task.startDate ? dateFormat(task.startDate) : "Non défini"}
-          </p>
-          <p>
-            Termine {task.endDate ? dateFormat(task.endDate) : "Non défini"}
-          </p>
-        </div>
+        <TaskDate task={task} index={index} />
         <div className="delete-block">
           <button
             className="not-valid-button"
-            onClick={() => deleteTask(taskId)}
+            onClick={() => deleteTask(task.id)}
           >
             SUPPRIMER
           </button>
         </div>
       </div>
+
       {/* Render the task's description if it is expanded */}
       {task.expanded && (
         <div className="description-block">
@@ -56,6 +50,7 @@ const Task = ({ task, index }) => {
           <p>{task.description}</p>
         </div>
       )}
+
       {/* Render either a REDUIRE or ETENDRE button depending on if the task is expanded */}
       {task.description && <ExpandButton task={task} index={index} />}
     </div>
