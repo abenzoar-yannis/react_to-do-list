@@ -7,12 +7,12 @@ import DataContext from "../context/DataContext"; // Import the DataContext
 
 import TaskDate from "./TaskDate";
 import ExpandButton from "./ExpandButton";
+import TaskDelete from "./TaskDelete";
 
 /* Render a single task */
 const Task = ({ task, index }) => {
   /* CONTEXT IMPORTS */
-  const { dateFormat, toggleTaskCompletion, deleteTask } =
-    useContext(DataContext); // Import the necessary functions and values from DataContext
+  const { dateFormat, toggleTaskCompletion } = useContext(DataContext); // Import the necessary functions and values from DataContext
   const taskId = task.id; // Get the task's ID
 
   return (
@@ -33,14 +33,7 @@ const Task = ({ task, index }) => {
 
       <div className="task-info">
         <TaskDate task={task} index={index} />
-        <div className="delete-block">
-          <button
-            className="not-valid-button"
-            onClick={() => deleteTask(task.id)}
-          >
-            SUPPRIMER
-          </button>
-        </div>
+        <TaskDelete taskId={task.id} />
       </div>
 
       {/* Render the task's description if it is expanded */}

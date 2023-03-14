@@ -173,3 +173,9 @@ input[type="checkbox"] {
   flex-direction: column;
   padding: 0.4rem 0;
 }
+
+.confirmation-dialog > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

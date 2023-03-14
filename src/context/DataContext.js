@@ -26,6 +26,9 @@ export const DataProvider = ({ children }) => {
   const [endDate, setEndDate] = useState(null); // state to hold the end date of the task
   const [description, setDescription] = useState(""); // state to hold the description of the task
 
+  const [showConfirmation, setShowConfirmation] = useState(false); // Boolean to track if confirmation dialog should be displayed or not
+  const [whatId, setWhatId] = useState(null); // Object that tracks which task was clicked
+
   /* --- --- --- UTILS FUNCTIONS --- --- --- */
 
   /* EXPAND/COLAPSE TASK */
@@ -143,6 +146,10 @@ export const DataProvider = ({ children }) => {
         setEndDate,
         description,
         setDescription,
+        showConfirmation,
+        setShowConfirmation,
+        whatId,
+        setWhatId,
         handleIndex,
         handleNewTask,
         unixTimestamp,
