@@ -11,6 +11,14 @@ const { dateFormat } = require("../utils/dateFormat");
 const { storageTasks } = require("../utils/storageTasks");
 const { handleIndex } = require("../utils/handleIndex");
 
+/* ensures the validity of a date for the date inputs */
+function validDate(date) {
+  const regexToISOString = new RegExp(
+    /^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{2}\s\d{4}\s\d{2}:\d{2}:\d{2}\sGMT[+-]\d{4}.*$/
+  );
+  return regexToISOString.test(date);
+}
+
 /* --- CREATE CONTEXT --- */
 const DataContext = createContext({});
 
@@ -161,6 +169,7 @@ export const DataProvider = ({ children }) => {
         toggleTaskCompletion,
         deleteTask,
         clearAllTasks,
+        validDate,
       }}
     >
       {children}
