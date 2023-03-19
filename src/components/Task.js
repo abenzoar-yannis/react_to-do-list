@@ -13,10 +13,9 @@ import TaskDelete from "./TaskDelete";
 const Task = ({ task, index }) => {
   /* CONTEXT IMPORTS */
   const { dateFormat, toggleTaskCompletion } = useContext(DataContext); // Import the necessary functions and values from DataContext
-  const taskId = task.id; // Get the task's ID
 
   return (
-    <div className="task-block" id={`block-task-${taskId}`}>
+    <div className="task-block" id={`block-task-${task.id}`}>
       <div className="title-task">
         <div>
           <h3>{task.title}</h3>
@@ -26,7 +25,7 @@ const Task = ({ task, index }) => {
           <input
             type="checkbox"
             checked={task.isChecked}
-            onChange={() => toggleTaskCompletion(taskId)}
+            onChange={() => toggleTaskCompletion(task.id)}
           />
         </div>
       </div>

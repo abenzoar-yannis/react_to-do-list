@@ -34,6 +34,7 @@ export const DataProvider = ({ children }) => {
   const [endDate, setEndDate] = useState(null); // state to hold the end date of the task
   const [description, setDescription] = useState(""); // state to hold the description of the task
 
+  const [createNewTask, setCreateNewTask] = useState(false);
   const [deleteAllTask, setDeleteAllTask] = useState(false); // Boolean to track if confirmation dialog should be displayed or not for delete all task
   const [deleteOneTask, setDeleteOneTask] = useState(false); // Boolean to track if confirmation dialog should be displayed or not for delete one task
   const [whatId, setWhatId] = useState(null); // Object that tracks which task was clicked
@@ -161,6 +162,8 @@ export const DataProvider = ({ children }) => {
         setWhatId,
         deleteAllTask,
         setDeleteAllTask,
+        createNewTask,
+        setCreateNewTask,
         handleIndex,
         handleNewTask,
         unixTimestamp,
