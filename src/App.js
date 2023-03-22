@@ -1,14 +1,16 @@
 // import "./App.css";
-import CreateTask from "./components/CreateTask";
+import TaskCreator from "./components/TaskCreator";
 import TaskList from "./components/TaskList";
 
 function App() {
   return (
-    <div>
-      <h1>Ma to-do list</h1>
-      <CreateTask />
+    <main>
+      <header>
+        <h1>Liste de Tâches</h1>
+      </header>
+      <TaskCreator />
       <TaskList />
-    </div>
+    </main>
   );
 }
 

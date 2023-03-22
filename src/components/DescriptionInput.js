@@ -12,16 +12,18 @@ const DescriptionInput = ({ label, index }) => {
 
   // Render a label element with a for attribute that corresponds to the textarea's id
   return (
-    <label htmlFor={`description-input-${() => handleIndex(index)}`}>
-      {label} :
-      <br />
+    <div className="input-componants">
+      <label htmlFor={`description-input-${() => handleIndex(index)}`}>
+        {label} :
+      </label>
       <textarea
+        id={`description-input-${() => handleIndex(index)}`}
         value={description}
         // Bind the textarea's value to the description state
         onChange={(event) => setDescription(event.target.value)}
         // Update the textarea's state when the input value changes
       />
-    </label>
+    </div>
   );
 };
 

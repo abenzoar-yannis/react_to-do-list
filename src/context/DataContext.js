@@ -74,7 +74,7 @@ export const DataProvider = ({ children }) => {
   };
 
   /* Function to handle the submission of a new task */
-  const handleNewTask = async (event) => {
+  const handleNewTask = (event) => {
     // Prevent the default form submission behavior
     event.preventDefault();
     // Set the createdAt state to the current date and time
@@ -164,6 +164,7 @@ export const DataProvider = ({ children }) => {
         setDeleteAllTask,
         createNewTask,
         setCreateNewTask,
+        resetState,
         handleIndex,
         handleNewTask,
         unixTimestamp,

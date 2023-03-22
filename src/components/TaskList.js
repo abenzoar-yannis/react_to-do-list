@@ -13,15 +13,17 @@ const TaskList = () => {
   const { tasks } = useContext(DataContext); // Import the tasks and clearAllTasks functions from DataContext
 
   return (
-    <div id="tasks-list">
-      <h2>Liste des tâches</h2>
+    <section id="tasks-list">
+      <div className="secondary-header">
+        <h2>Liste des tâches</h2>
+      </div>
       <AllTasksDelete />
       {/* Render a button that clears all tasks */}
       {tasks.map((task, index) => (
         <Task key={index} task={task} index={index} />
       ))}
       {/* Render the Task component for each task in the tasks array */}
-    </div>
+    </section>
   );
 };
 

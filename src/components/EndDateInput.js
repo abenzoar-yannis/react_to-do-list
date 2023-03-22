@@ -13,9 +13,10 @@ const EndDateInput = ({ label, index }) => {
 
   // Render a label element with a for attribute that corresponds to the input's id
   return (
-    <label htmlFor={`end-date-input-${() => handleIndex(index)}`}>
-      {label} :
-      <br />
+    <div className="input-componants">
+      <label htmlFor={`end-date-input-${() => handleIndex(index)}`}>
+        {label} :
+      </label>
       <input
         id={`end-date-input-${() => handleIndex(index)}`}
         type="datetime-local"
@@ -24,7 +25,7 @@ const EndDateInput = ({ label, index }) => {
         onChange={(event) => setEndDate(new Date(event.target.value))}
         // Update the endDate state when the input value changes
       />
-    </label>
+    </div>
   );
 };
 

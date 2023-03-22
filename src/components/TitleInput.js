@@ -12,9 +12,10 @@ const TitleInput = ({ label, index }) => {
 
   // Render a label element with a for attribute that corresponds to the input's id
   return (
-    <label htmlFor={`title-input-${() => handleIndex(index)}`}>
-      {label} * :
-      <br />
+    <div className="input-componants">
+      <label htmlFor={`title-input-${() => handleIndex(index)}`}>
+        {label} * :
+      </label>
       <input
         id={`title-input-${() => handleIndex(index)}`}
         type="text"
@@ -25,7 +26,7 @@ const TitleInput = ({ label, index }) => {
         // Update the title state when the input value changes
         required
       />
-    </label>
+    </div>
   );
 };
 
