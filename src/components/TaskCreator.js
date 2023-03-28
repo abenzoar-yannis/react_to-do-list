@@ -22,11 +22,7 @@ const TaskCreator = () => {
   return (
     <section id="task-creator">
       {!createNewTask && (
-        <div
-          id="task-creator-opener"
-          className="secondary-header"
-          onClick={() => setCreateNewTask(true)}
-        >
+        <div id="task-creator-opener" onClick={() => setCreateNewTask(true)}>
           Créer une nouvelle tâche ?
           <br />
           <FaPlus />
